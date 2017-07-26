@@ -1,0 +1,323 @@
+{
+  "intents": [
+    {
+      "name": "AddSaleIntent",
+      "samples": [
+        "Add a new sale",
+        "I want to add a new sale",
+        "that I want to add a new sale",
+        "add sale",
+        "Can you  add a new sale for me",
+        "can you add a new sale",
+        "I just sold {Product} to {Company} for {Amount} dollars",
+        "{Company} just bought me {Amount} dollars worth of {Product}",
+        "add a new {Product} sale",
+        "add a new {Product} sale with {Company}",
+        "add a new sale with {Company}",
+        "add a new {Amount} dollars sale"
+      ],
+      "slots": [
+        {
+          "name": "Product",
+          "type": "VRProduct",
+          "samples": [
+            "{Product}",
+            "I sold {Product}",
+            "I sold the {Product}",
+            "the {Product}",
+            "I sold {Product} to {Company} ",
+            "I sold {Product} to {Company} for {Amount} dollars"
+          ]
+        },
+        {
+          "name": "Company",
+          "type": "AMAZON.Corporation",
+          "samples": [
+            "{Company}",
+            "it's {Company}"
+          ]
+        },
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{Amount}",
+            "{Amount} dollars",
+            "it was {Amount} dollars"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "BestCostumerIntent",
+      "samples": [
+        "who is my best costumer",
+        "who is my best client",
+        "who is my top costumer",
+        "who is my top client",
+        "top costumer",
+        "top client",
+        "about my best costumer",
+        "about my top costumer",
+        "about my best costumer in {SalesDate}",
+        "about my top client in {SalesDate}",
+        "who was my best costumer in {SalesDate}",
+        "who is my best client {SalesDate}",
+        "tell me about my top costumer {SalesDate}",
+        "tell me about my top client {SalesDate}",
+        "tell me about my best costumer {SalesDate}",
+        "tell me about my best client {SalesDate}",
+        "who was my best costumer {SalesDate}",
+        "who was my best client {SalesDate}"
+      ],
+      "slots": [
+        {
+          "name": "SalesDate",
+          "type": "AMAZON.DATE",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "MostPopularIntent",
+      "samples": [
+        "Which product is the most popular",
+        "what product is the most popular",
+        "what item is the most popular",
+        "which product is our best-seller",
+        "what has been our best-seller",
+        "tell me about our best-seller",
+        "tell me about our most popular product",
+        "about my most popular item",
+        "Which product has been the most popular {SalesDate}",
+        "what product was the most popular {SalesDate}",
+        "which item has been the most popular {SalesDate}",
+        "what has been our best-seller {SalesDate}",
+        "tell me about our best-seller {SalesDate}",
+        "tell me about my most popular product {SalesDate}",
+        "about our most popular item {SalesDate}",
+        "which is my most popular product",
+        "what's the most requested product",
+        "best-seller",
+        "about our best-seller product",
+        "what item is our best-seller",
+        "{SalesDate} best-seller",
+        "which product is the most popular",
+        "about our most popular product",
+        "about our best-seller {SalesDate}",
+        "what is the most requested product {SalesDate}",
+        "which is our best-selling item {SalesDate}",
+        "about our best-selling product",
+        "about our best selling product {SalesDate}"
+      ],
+      "slots": [
+        {
+          "name": "SalesDate",
+          "type": "AMAZON.DATE",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "SalesIntent",
+      "samples": [
+        "tell me about {SalesDate} sales",
+        "tell me about my {SalesDate} sales",
+        "tell me about my sales in {SalesDate}",
+        "about {SalesDate} sales",
+        "about {SalesDate}",
+        "what were {SalesDate} sales",
+        "what were my sales {SalesDate}",
+        "what were my sales on {SalesDate}",
+        "what were my sales in {SalesDate}",
+        "{SalesDate} sales",
+        "what sales did I have on {SalesDate}",
+        "tell me about the sales",
+        "tell me about my sales",
+        "sales",
+        "what sales did I have",
+        "give me some informations about my sells",
+        "How much money did I make"
+      ],
+      "slots": [
+        {
+          "name": "SalesDate",
+          "type": "AMAZON.DATE",
+          "samples": [
+            "on {SalesDate}",
+            "{SalesDate} sales",
+            "the sales from {SalesDate}"
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "VRProduct",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "Hololens",
+            "synonyms": [
+              "The hololens",
+              "hololenses",
+              "Microsoft's AR goggles"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Oculus",
+            "synonyms": [
+              "Oculus Rift",
+              "the Oculus",
+              "the OculusRift",
+              "Facebook's VR goggles"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "HTC Vive",
+            "synonyms": [
+              "Vive",
+              "the Vive",
+              "the HTC Vive",
+              "HTC's VR goggles"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Confirm.Intent-AddSaleIntent",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Do you want me to add a {Amount} dollars worth of {Product} with, {Company}, at today's date?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-AddSaleIntent.IntentSlot-Product",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What product did you sell"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-AddSaleIntent.IntentSlot-Company",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What's the name of the company's buyer?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-AddSaleIntent.IntentSlot-Amount",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what is the sale's amount ?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SalesIntent.IntentSlot-SalesDate",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Sure, can you specify a date or period ?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "AddSaleIntent",
+        "confirmationRequired": true,
+        "prompts": {
+          "confirm": "Confirm.Intent-AddSaleIntent"
+        },
+        "slots": [
+          {
+            "name": "Product",
+            "type": "VRProduct",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-AddSaleIntent.IntentSlot-Product"
+            }
+          },
+          {
+            "name": "Company",
+            "type": "AMAZON.Corporation",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-AddSaleIntent.IntentSlot-Company"
+            }
+          },
+          {
+            "name": "Amount",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-AddSaleIntent.IntentSlot-Amount"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "SalesDate",
+            "type": "AMAZON.DATE",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-SalesIntent.IntentSlot-SalesDate"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "stanleyrds",
+  "version": "1.0.0",
+  "description": "Assistant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luca Di Matteo 8Ninths",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.11",
+    "pg": "^6.4.0"
+  }
+}
